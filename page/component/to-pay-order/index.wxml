@@ -1,0 +1,69 @@
+<view class="container {{iphone}}">
+    <view class="header-container">
+      <navigator open-type="navigateBack" delta="1" hover-class="navigator-hover">
+        <image class="goback" src="../../../images/goback.png" />
+      </navigator>
+      <view class="header-name">确认订单</view>
+    </view>
+    <form bindsubmit="createOrder" report-submit="true">
+     <view class="address-box">
+        <view class="add-address" hidden="{{address}}">
+            <view class="title" bindtap="chooseAddress">请选择收货地址</view>
+        </view>
+        <view class="show-address" hidden="{{!address}}" bindtap="chooseAddress">
+            <view class="name-tel">{{address.contactPeople}}  {{address.contactPhone}}</view>
+            <view class="addr-text">{{address.deliveryAddress}}</view>
+        </view>
+     </view>
+     <view class="goods-list">
+        <!-- <view class="list-title">商品列表</view> -->
+        <view class="a-goods">
+            <view class="img-box">
+                <image src="{{goodsDetail.icon}}" class="img" />
+            </view>
+            <view class="text-box">
+                <view class="arow arow01">
+                    <view class="goods-name">{{goodsDetail.title}}</view>
+                    <view class="goods-price">¥ {{goodsDetail.price}}</view>
+                </view>
+                <view class="arow">
+                    <view class="goods-label">购买数量</view>
+                    <view class="goods-num buy-num-box">
+                      <view class="num-box">
+                        <view class="num-jian {{buyNumber == buyNumMin ? 'hui': ''}}" bindtap="numJianTap">-</view>
+                        <view class="num-input">
+                          <input type="number" value="{{buyNumber}}" disabled/>
+                        </view>
+                        <view class="num-jia {{buyNumber== buyNumMax ? 'hui': ''}}" bindtap="numJiaTap">+</view>
+                      </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+     </view>
+     <view class="peisong-way">
+        <view class="row-box">
+            <view class="row-label">
+              不支持退货
+              <block wx:if="{{goodsDetail.limitNumber > 0}}">，限购数量{{goodsDetail.limitNumber}}</block>
+            </view>
+        </view>
+     </view>
+     <view class="goods-info">
+        <view class="row-box">
+            <view class="row-label">商品金额</view>
+            <view class="right-text">¥ {{allGoodsPrice}}</view>
+        </view>
+        <view class="row-box">
+            <view class="row-label">运费</view>
+            <view class="right-text">+ ¥ {{yunPrice}}</view>
+        </view>
+     </view>
+     <view class="jiesuan-box">
+        <view class="left-price">
+            <view class="total">合计：¥ {{allGoodsPrice + yunPrice}}</view>
+        </view>
+        <button class="to-pay-btn" formType="submit">提交订单</button>
+    </view>
+    </form>
+</view>

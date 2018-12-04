@@ -1,0 +1,30 @@
+
+<view class='container {{iphone}}'>
+  <view class="header-container">
+    <navigator open-type="navigateBack" delta="1" hover-class="navigator-hover">
+      <image class="goback" src="../../../images/goback.png" />
+    </navigator>
+    <view class="header-name">我的财产</view>
+  </view>
+  <view class='header'>
+    <view>
+      <image src='/images/money.png'></image>
+    </view>
+    <view class='moeny'>￥{{amount}}</view>
+    <view class='btns'>
+      <navigator class='flex-row cash' url="/page/component/withdraw/index">
+        提现
+      </navigator>    
+    </view>
+  </view>
+
+  <navigator class='flex log' url="/page/component/balance-log/index?balanceId={{balanceId}}">
+    <view class='flex-row lf'>
+      财产明细               
+    </view>
+    <view class='flex-row img rg'>
+      <image src='/images/right.png'></image>
+    </view>
+  </navigator>
+
+</view>

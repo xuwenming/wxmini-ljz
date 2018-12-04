@@ -1,0 +1,79 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.1",
+	"appid": "wx89a53a1955316447",
+	"projectname": "%E5%90%95%E5%AE%B6%E4%BC%A0",
+	"miniprogramRoot": "./",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 6,
+			"list": [
+				{
+					"id": -1,
+					"name": "aa",
+					"pathName": "page/component/to-pay-order/index",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "bb",
+					"pathName": "page/component/to-pay-order/success/index",
+					"query": "orderId=100000&totalPrice=101&deliveryAddress=广东省 广州市 海珠区 新港中路397号&contactPhone=020-81167888&contactPeople=张三"
+				},
+				{
+					"id": -1,
+					"name": "cc",
+					"pathName": "page/component/share-rule/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "dd",
+					"pathName": "page/component/prize-rule/index",
+					"query": ""
+				},
+				{
+					"id": 4,
+					"name": "wathdraw",
+					"pathName": "page/component/withdraw/index",
+					"query": "id=6&recommend=3"
+				},
+				{
+					"id": -1,
+					"name": "财产",
+					"pathName": "page/component/balance/index",
+					"query": "id=6&recommend=3"
+				},
+				{
+					"id": 6,
+					"name": "收支明细",
+					"pathName": "page/component/balance-log/index",
+					"query": "balanceId=1"
+				}
+			]
+		}
+	}
+}

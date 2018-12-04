@@ -1,0 +1,66 @@
+.container {
+    margin-bottom: 120rpx;
+    margin-top: 130rpx;
+    background-color: #fff;
+}
+
+.header-container {
+    background-color: #05C0AB;
+}
+
+.header-container .header-name {
+    color: #fff;
+}
+
+.iphone {
+    margin-top: 180rpx;
+}
+
+.rule{
+    padding: 24rpx;
+}
+
+.rule .title{
+    font-size: 32rpx;
+    color: #333;
+    text-align: center;
+    padding-bottom: 40rpx;
+}
+
+.rule .item{
+    color: #999;
+    line-height: 48rpx;
+    padding-bottom: 10rpx;
+}
+
+.rule .des{
+    text-indent: 2em;
+    padding-bottom: 20rpx;
+    color: #FF0000;
+}
+
+.rule .jsq {
+  padding-top: 20rpx; 
+}
+
+.btn{
+    padding: 40rpx;
+}
+
+.btn view{
+    border: 1px solid #05C0AB;
+    height: 80rpx;
+    color: #05C0AB;
+    border-radius: 8rpx;
+}
+
+.btn view:first-child{
+    background-color: #05C0AB;
+    color: #fff;
+    margin-bottom: 20rpx;
+}
+
+.btn view:last-child:active{
+    background-color: #05C0AB;
+    color: #fff;
+}

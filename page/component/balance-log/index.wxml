@@ -1,0 +1,31 @@
+<view class="container {{iphone}}">
+  <view class="header-container">
+    <navigator open-type="navigateBack" delta="1" hover-class="navigator-hover">
+      <image class="goback" src="../../../images/goback.png" />
+    </navigator>
+    <view class="header-name">财产明细</view>
+  </view>
+    <view class='box'>
+       <view class='list line-after line-before'  wx:if="{{balanceLogs == null || balanceLogs.length > 0}}">
+
+        <view class='item line-bl' wx:for="{{balanceLogs}}" wx:key="id" wx:for-item="balanceLog">
+          <view class='flex '>
+            <view class='flex-row lf'>
+              <view class='flex top'>{{balanceLog.refTypeName}}</view>
+              <view class='bottom'>{{balanceLog.addtime}}</view>
+            </view>
+            <view class='flex-row rg'>
+              <view class="amout">{{balanceLog.amount > 0 ? '+' + balanceLog.amount : balanceLog.amount}}</view>
+              <view class="balance">{{balanceLog.balanceAmount}}</view>
+            </view>
+          
+          </view>
+        </view>
+      </view>
+
+      <view wx:else>
+        <include src="/page/common/noDataTemplate.wxml"/>   
+      </view>
+    </view>
+
+</view>

@@ -1,0 +1,26 @@
+<view class="container {{iphone}}">
+    <view class="header-container">
+        <navigator open-type="navigateBack" delta="1" hover-class="navigator-hover">
+            <image class="goback" src="../../../images/goback.png" />
+        </navigator>
+        <view class="header-name">享赚钱规则</view>
+    </view>
+
+    <view class='rule'>
+        <view class='title'>享赚钱规则</view>
+        <view class='item'>1.凡是新用户通过你转发的链接产生的订单，你都能获取佣金</view>
+        <view class='item'>2.凡是你发展的客户，客户以后每次购买，都会产生一定的佣金</view>
+        <view class='item'>
+            3.商品佣金比例是商家后台提前设定好的，商家可能会临时调整，你的实际佣金所得是按照你发展的用户在下单那一刻开始计算的。
+            两周之后，佣金即可提现
+        </view>
+        <view class='item'>4.提现可直接进入小程序，点击提现按钮，也可通过任何人分享的链接到商品详情页提现</view>
+        <view class='item'>5.规则会随着公司发展而变化</view>
+        <view class='item'>6.最终解释权归本公司</view>
+        <view class='item amount'>当前商品如果客户现在下单，可赚取的佣金为{{shareAmount}}元</view>
+    </view>
+
+    <view class='btn'>
+        <button open-type='share' class='flex fac fjc'>点击转发</button>
+    </view>
+</view>
