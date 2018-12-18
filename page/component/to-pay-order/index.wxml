@@ -32,7 +32,7 @@
                       <view class="num-box">
                         <view class="num-jian {{buyNumber == buyNumMin ? 'hui': ''}}" bindtap="numJianTap">-</view>
                         <view class="num-input">
-                          <input type="number" value="{{buyNumber}}" disabled/>
+                          <input type="number" value="{{buyNumber}}" bindinput='numChangeTab' bindblur='numBlurTab'/>
                         </view>
                         <view class="num-jia {{buyNumber== buyNumMax ? 'hui': ''}}" bindtap="numJiaTap">+</view>
                       </view>
@@ -44,8 +44,7 @@
      <view class="peisong-way">
         <view class="row-box">
             <view class="row-label">
-              不支持退货
-              <block wx:if="{{goodsDetail.limitNumber > 0}}">，限购数量{{goodsDetail.limitNumber}}</block>
+              <text>{{goodsDetail.describtion}}</text>
             </view>
         </view>
      </view>

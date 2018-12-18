@@ -153,3 +153,16 @@ picker {
 .row-wrap-1 .right-box {
   margin-right: 30rpx;
 }
+
+.row-wrap-sm {
+  margin:32rpx;
+  
+}
+.row-wrap-sm .lable-text{
+  font-size: 30rpx;
+  color:#FF0000;
+}
+.row-wrap-sm .fz {
+  font-size: 32rpx;
+  color: #05C0AB;
+}

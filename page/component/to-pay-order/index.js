@@ -30,12 +30,14 @@ Page({
   onShow: function () {
     var goodsDetail = wx.getStorageSync('buyNowInfo');
     var buyNumMax = goodsDetail.quantity;
-    if (goodsDetail.limitNumber > 0 && goodsDetail.limitNumber < goodsDetail.quantity) {
-      buyNumMax = goodsDetail.limitNumber;
+    var buyNumber = goodsDetail.limitNumber;
+    if (goodsDetail.limitNumber > 0 && goodsDetail.limitNumber > goodsDetail.quantity) {
+      buyNumber = goodsDetail.quantity;
     }
     this.setData({
       goodsDetail: goodsDetail,
       buyNumMax: buyNumMax,
+      buyNumber: buyNumber,
       allGoodsPrice: goodsDetail.price,
       yunPrice: goodsDetail.freight,
     });
@@ -82,6 +84,26 @@ Page({
         buyNumber: currentNum
       })
       this.totalPrice(currentNum);
+    }
+  },
+  numChangeTab: function(e) {
+    var buyNumber = e.detail.value;
+    if (buyNumber != '' && buyNumber == 0) {
+      buyNumber = 1;
+    } 
+    if (buyNumber > this.data.buyNumMax) {
+      buyNumber = this.data.buyNumMax;
+    }
+    this.setData({
+      buyNumber: buyNumber
+    })
+    this.totalPrice(buyNumber);
+  },
+  numBlurTab: function (e) {
+    if(e.detail.value == '') {
+      this.setData({
+        buyNumber: 1
+      })
     }
   },
   totalPrice: function(num){

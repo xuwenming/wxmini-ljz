@@ -1,12 +1,9 @@
 <view class="container {{iphone}}">
-    <view class="header-container">
-        <view class="header-name">商品详情</view>
-    </view>
 
     <view class="swiper-container">
         <swiper class="swiper_box" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
             <block wx:for="{{goodsDetail.imageUrls}}" wx:key="id">
-                <swiper-item>
+                <swiper-item bindtap="showImage" data-url="{{item}}">
                     <image src="{{item}}" class="slide-image" lazy-load="true" mode="aspectFill"/>
                 </swiper-item>
             </block>
@@ -28,15 +25,24 @@
             <view class="grow flex fac">昨日消费中奖</view>
             <view class="grow flex fje fac" bindtap='prizeRule'>中奖规则</view>
         </view>
-        <view class="item flex" wx:for="{{prizeLogs}}" wx:key="id">
-            <view class="grow avatar flex">
-                <image src="{{item.user.icon}}" mode="aspectFill" class='grow'></image>
-                <view class='grow flex fac'>{{item.user.nickName}}</view>
+        <block wx:if="{{prizeLogs != null && prizeLogs.length > 0}}">
+          <view class="item flex" wx:for="{{prizeLogs}}" wx:key="id">
+              <view class="grow avatar flex">
+                  <image src="{{item.user.icon}}" mode="aspectFill" class='grow'></image>
+                  <view class='grow flex fac'>{{item.user.nickName}}</view>
+              </view>
+              <view class="grow text flex fac fje">
+                  昨天购买{{item.quantity}}件，中奖 <text class='amount'>{{item.amount}}</text>元
+              </view>
+          </view>
+        </block>
+        <block wx:else>
+          <view class="item flex">
+            <view style="color:#b5272d;">
+              系统正在产生中奖名单...
             </view>
-            <view class="grow text flex fac fje">
-                昨天购买{{item.quantity}}件，中奖 <text class='amount'>{{item.amount}}</text>
-            </view>
-        </view>
+          </view>
+        </block>
     </view>
 
     <view class="draw">
@@ -50,7 +56,7 @@
                 <view class='grow flex fac'>{{item.user.nickName}}</view>
             </view>
             <view class="grow text flex fac fje">
-                我转发了一次，提现 <text class='amount'>{{item.amount}}</text>
+                我转发了一次，提现 <text class='amount'>{{item.amount}}</text>元
             </view>
         </view>
     </view>

@@ -4,7 +4,6 @@ page{
 
 .container {
     padding-bottom: 100rpx;
-    margin-top: 130rpx;
 }
 
 .header-container {
@@ -12,10 +11,6 @@ page{
 }
 .header-container .header-name {
 	color: #fff;
-}
-
-.iphone {
-  margin-top: 180rpx;
 }
 
 .swiper-container {
@@ -26,7 +21,7 @@ page{
 
 .swiper_box {
   width: 100%;
-  height: 400rpx;
+  height: 500rpx;
 }
 
 swiper-item image{
@@ -66,11 +61,11 @@ swiper-item image{
 }
 
 .goods .title{
-    overflow : hidden;
+    /* overflow : hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: vertical; */
     line-height: 40rpx;
     max-height: 80rpx;
 }

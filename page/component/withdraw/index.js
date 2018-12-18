@@ -34,12 +34,14 @@ Page({
             amount: data.obj.amount,
             minAmount: data.obj.minAmount,
             serviceAmtPer: data.obj.serviceAmtPer,
-            serviceAmt: data.obj.serviceAmt
+            serviceAmt: data.obj.serviceAmt,
+            kfWechatNo: data.obj.kfWechatNo
           })
           if (data.obj.withdrawLog) {
             that.setData({
               realName: data.obj.withdrawLog.realName,
-              phone: data.obj.withdrawLog.phone
+              phone: data.obj.withdrawLog.phone,
+              wechatNo: data.obj.withdrawLog.wechatNo
             })
           }
         }
@@ -52,6 +54,7 @@ Page({
     var amount = e.detail.value.amount;
     var realName = e.detail.value.realName;
     var phone = e.detail.value.phone;
+    var wechatNo = e.detail.value.wechatNo;
 
     if (amount == '' || amount < that.data.minAmount) {
       wx.showModal({
@@ -85,12 +88,21 @@ Page({
       })
       return
     }
+    if (wechatNo == '') {
+      wx.showModal({
+        title: '错误',
+        content: '请填写微信号',
+        showCancel: false
+      })
+      return
+    }
     request.httpPost({
       url: config.applyWithdraw,
       data: {
         amount: amount,
         realName: realName,
-        phone: phone
+        phone: phone,
+        wechatNo: wechatNo
       },
       success: function (data) {
         if (data.success) {
@@ -113,6 +125,18 @@ Page({
             showCancel: false
           })
         }
+      }
+    })
+  },
+  copy: function() {
+    var that = this;
+    wx.setClipboardData({
+      data: that.data.kfWechatNo,
+      success(res) {
+        wx.showToast({
+          title: '复制成功',
+          icon: 'success'
+        })
       }
     })
   }

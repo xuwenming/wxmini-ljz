@@ -236,5 +236,13 @@ Page({
     wx.navigateTo({
       url: "/page/component/share-rule/index"
     })
+  },
+
+  showImage: function(e) {
+    var tempFilePaths = this.data.goodsDetail.imageUrls;
+    wx.previewImage({
+      current: e.currentTarget.dataset.url,
+      urls: tempFilePaths
+    })
   }
 })

@@ -32,6 +32,20 @@
           <input name="phone" class="input" maxlength="11" type="number" placeholder="请填写真实手机号" value="{{phone}}" />
         </view>
       </view>
+      <view class="row-wrap-1">
+        <view class="label">微信号</view>
+        <view class="label-right">
+          <input name="wechatNo" class="input" maxlength="11" type="text" placeholder="请填写微信号" value="{{wechatNo}}" />
+        </view>
+      </view>
+      <view class="row-wrap-sm">
+        <view class="lable-text">
+          由于平台暂未开放微信提现到您的零钱接口，所以提现的话需要您先添加客服微信，客服将转账给您。客服微信号：{{kfWechatNo}}
+        </view>
+        <view>
+          点击<text class="fz" bindtap='copy'>复制客服微信号</text>
+        </view>
+      </view>
     </view>
     <button class="save-btn" formType="submit">确认提现</button>
   </form>

@@ -7,13 +7,11 @@
     </view>
     
     <view class="rule">
-        <view class='title'>每日消费者中奖规则</view>
-        <view class='item des'>老板去年赚钱了，为答谢新老客户，老板特下令团队拟定本奖金项目回馈衣食父母</view>
         <view class='item'>【中奖频率】每天都会产生中奖名单</view>
         <view class='item'>【中奖金额】根据当天销量的百分比作为当日奖金池</view>
         <view class='item'>【中奖者】今日中奖者在昨天0点至昨天24点的消费者当中随机产生N名</view>
         <view class='item'>【抽奖时间】每天8点以前抽取昨日中奖者，并将中奖信息推送给中奖者</view>
-        <view class='item'>【中奖提现】中奖者可到小程序直接提现奖金到微信零钱</view>
+        <view class='item'>【中奖提现功能路劲】资产>提现</view>
         <view class='item jsq'>
             所有活动规则基于中国法律，腾讯平台规则，如若有违背，我们第一时间给予调整，
             并尽最大的可能性保证消费者权益，规则会随着公司发展而变化，最终解释权归本公司

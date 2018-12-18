@@ -25,6 +25,9 @@ var config = {
     // 获取商品转发提现名单
     getShareLogList: `${server_host}/api/goods/sharelog/list`,
 
+    // 获取商品小程序专属二维码
+    getWxacode: `${server_host}/api/goods/getWxacode`,
+
     // 创建订单
     addOrder: `${server_host}/api/order/add`,
 
